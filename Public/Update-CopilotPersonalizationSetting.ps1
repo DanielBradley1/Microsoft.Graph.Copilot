@@ -1,4 +1,4 @@
-function Update-PersonalizationSetting {
+function Update-CopilotPersonalizationSetting {
     <#
     .SYNOPSIS
     Updates the Microsoft 365 Copilot personalization settings.

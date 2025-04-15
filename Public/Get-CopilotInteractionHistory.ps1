@@ -1,4 +1,4 @@
-function Get-aiInteractionHistory {
+function Get-CopilotInteractionHistory {
     <#
     .SYNOPSIS
     Get a users ineraction history with Microsoft 365 Copilot.

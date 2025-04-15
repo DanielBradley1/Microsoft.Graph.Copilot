@@ -1,4 +1,4 @@
-function Get-PersonalizationSetting {
+function Get-CopilotPersonalizationSetting {
     <#
     .SYNOPSIS
     Gets the Microsoft 365 Copilot personalization settings.
