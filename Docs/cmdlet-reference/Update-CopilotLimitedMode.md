@@ -1,4 +1,4 @@
-# Update-CopilotLicense
+# Get-CopilotLimitedMode
 
 ## Synopsis
 Updates the Microsoft 365 Copilot limited mode settings.
