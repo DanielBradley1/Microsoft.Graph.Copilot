@@ -20,7 +20,7 @@
     AliasesToExport = @()
     PrivateData = @{
             PSData = @{
-                Tags = @('Microsoft Graph', 'Copilot', 'Microsoft Copilot')
+                Tags = @('Microsoft', 'Copilot', 'MicrosoftCopilot')
                 LicenseUri = 'https://github.com/DanielBradley1/Microsoft.Graph.Copilot/blob/main/LICENSE'
                 ProjectUri = 'https://github.com/DanielBradley1/Microsoft.Graph.Copilot'
                 # IconUri = ''
