@@ -13,6 +13,9 @@ Install-Module Microsoft.Graph.Copilot -scope CurrentUser
 Install-Module Microsoft.Graph.Copilot -scope AllUsers
 ```
 
+## Documentation
+
+Check out the [Microsoft Graph Copilot docs](Docs/README.md) :heart:
 
 ## Contributions
 To contribute to this module, please fork the repository and submit your pull request from there.
