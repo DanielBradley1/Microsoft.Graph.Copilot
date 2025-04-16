@@ -3,7 +3,11 @@ Microsoft.Graph.Copilot is a PowerShell module that enables you to interact with
 
 ***This module is not developed by Microsoft.***
 
-Author: Daniel Bradley
+- **Author:** Daniel Bradley
+- **Connect with me on LinkedIn:** https://www.linkedin.com/in/danielbradley2/
+
+**The module is as stable as the current Microsoft Graph Beta APIs. Some cmdlets may not work as expected everytime.*
+
 # Installing Microsoft Graph Copilot
 ```powershell
 # Install in the current user context
