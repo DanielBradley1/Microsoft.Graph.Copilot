@@ -1,46 +1,13 @@
 # Microsoft Graph Copilot Docs
 
-The below xx
+Welcome to the Microsoft Graph Copilot docs page!
 
-# cmdlet reference
+## cmdlet reference
+1. [Get-CopilotIntractionHistory](Get-CopilotIntractionHistory.md)
+2. [Get-CopilotLicense](Get-CopilotLicense.md)
+3. [Get-CopilotLimitedMode](Get-CopilotLimitedMode.md)
+4. [Get-CopilotPersonalizationSetting](Get-CopilotPersonalizationSetting.md)
+5. [Get-CopilotUsageDetail](Get-CopilotUsageDetail.md)
+6. [Update-CopilotLicense](Update-CopilotLicense.md)
+7. [Update-CopilotPersonalizationSetting](Update-CopilotPersonalizationSetting.md)
 
-
-## Get-CopilotLimitedMode
-
-Gets the Microsoft 365 Copilot limited mode settings.
-
-### Example
-
-```powershell
-Get-CopilotLimitedMode
-
-@odata.context                                                                        isEnabledForGroup groupId
---------------                                                                        ----------------- -------
-https://graph.microsoft.com/beta/$metadata#copilot/admin/settings/limitedMode/$entity              True ce86fe93-d42b-4e25-9f8b-55c108267f99
-```
-
-## Get-CopilotPersonalizationSetting
-Gets the Microsoft 365 Copilot personalization settings.
-### Example
-
-```powershell
-
-```
-
-## Get-CopilotUsageDetail
-### Example
-```powershell
-
-```
-
-## Update-CopilotLimitedMode
-### Example
-```powershell
-
-```
-
-## Update-CopilotPersonalizationSetting
-### Example
-```powershell
-
-```

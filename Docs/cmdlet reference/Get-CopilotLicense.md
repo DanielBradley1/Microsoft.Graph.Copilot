@@ -35,3 +35,6 @@ servicePlans     : {@{servicePlanId=ff7b261f-d98b-415b-827c-42a3fdf015af; servic
                    appliesTo=User}, @{servicePlanId=0aedf20c-091d-420b-aadf-30c042609612; servicePlanName=M365_COPILOT_SHAREPOINT; provisioningStatus=Success;
                    appliesTo=User}…}
 ```
+
+## Graph API reference link
+https://learn.microsoft.com/en-us/graph/api/directory-list-subscriptions?view=graph-rest-beta&tabs=http

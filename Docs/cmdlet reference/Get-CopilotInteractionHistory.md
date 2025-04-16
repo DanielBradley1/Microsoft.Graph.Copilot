@@ -1,78 +1,104 @@
 # Get-CopilotInteractionHistory
 
 ## Synopsis
-Get the most recent activity data for enabled users of Microsoft 365 Copilot apps.
+ Get a users ineraction history with Microsoft 365 Copilot.
 
 ## Syntax 
 
 ```powershell
-Get-CopilotUsageDetail
- -Period <String> ValidateSet("D7", "D30", "D90", "D180", "ALL")
- -Format <String> ValidateSet("object", "csv")
- -Outpath <String>
+Get-CopilotInteractionHistory
+ -UserId <String>
+ -Source <String> ValidateSet("Word", "Excel", "Loop", "M365App", "Bing", "Forms", "OneNote", 
+                    "Outlook", "PowerPoint", "TeamsAiNotes", "Channel", "Chat", 
+                    "Meeting", "WebChat", "Whiteboard")
+ -StartDate <String> ValidatePattern("^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
+ -EndDate <String> ValidatePattern("^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
 ```
 
 ## Description
 
-Get the most recent activity data for enabled users of Microsoft 365 Copilot app, output as a CSV or PowerShell object and within the defined period.
+Get all Microsoft 365 Copilot interaction data, including user prompts to Copilot and Copilot responses.
 
 ## Examples
 
-### Example 1: Get all activity data for all time and output to the console session as an object
+### Example 1: Get all Copilot interactions by a single user
 ```powershell
-Get-CopilotUsageDetail -Period All
+Get-CopilotInteractionHistory -UserId "dbradley@ourcloudnetwork.co.uk"
 
-reportRefreshDate                     : 2025-04-13
-userPrincipalName                     : # username
-displayName                           : # displayname
-lastActivityDate                      : 2025-02-20
-copilotChatLastActivityDate           : 2024-12-22
-microsoftTeamsCopilotLastActivityDate : 2025-02-20
-wordCopilotLastActivityDate           : 2024-12-01
-excelCopilotLastActivityDate          :
-powerPointCopilotLastActivityDate     : 2024-11-30
-outlookCopilotLastActivityDate        :
-oneNoteCopilotLastActivityDate        :
-loopCopilotLastActivityDate           :
-copilotActivityUserDetailsByPeriod    : {@{reportPeriod=7}, @{reportPeriod=30}, @{reportPeriod=90}, @{reportPeriod=180}}
+id               : 1732953515805
+sessionId        : 19:Z2dtNdqH2q3CoOQlnAFKSg_7xNx31x9k6gwFobbqAqM1@thread.v2
+requestId        : TaJnV4jTlTMub1uDThGg+R.2.4.1.1.1.1
+appClass         : IPM.SkypeTeams.Message.Copilot.PowerPoint
+interactionType  : aiResponse
+conversationType : appchat
+etag             : 1732953515805
+createdDateTime  : 30/11/2024 07:58:35
+locale           : en-us
+contexts         : {@{contextReference=https://$tenant$-my.sharepoint.com/personal/$userId$/_layouts
+                   /15/Doc.aspx?sourcedoc=%7B3F1EBD1F-A33D-462A-9EEE-F6C3D97EB750%7D&file=Presentation.pptx&action=edit
+                   &mobileredirect=true; displayName=Presentation.pptx; contextType=pptx}}
+from             : @{@odata.type=#microsoft.graph.chatMessageFromIdentitySet; device=; user=; application=}
+body             : @{contentType=html; content=<attachment id="21661e6f877949ba8372d686149c3c9d"></attachment>}
+attachments      : {}
+links            : {}
+mentions         : {}
 ```
 
-### Example 1: Get all activity data for all time and output to a CSV file
+### Example 2: Get all Copilot interactions by a single user filtered by source
 ```powershell
-Get-CopilotUsageDetail -Period All -Format csv -Outpath C:\reports\CopilotUsageReport.csv
-
-Copilot usage details saved to: C:\reports\CopilotUsageReport.csv
+Get-CopilotInteractionHistory -UserId "dbradley@ourcloudnetwork.co.uk" -Source Word
 ```
+
+### Example 3: Get all Copilot interactions by a single user filtered by source and date range
+```powershell
+Get-CopilotInteractionHistory -UserId "dbradley@ourcloudnetwork.co.4uk" -Source Word `
+-StartDate "2025-05-01T00:00:00Z" -EndDate "2025-04-10T00:00:00Z"
+```
+## Graph API reference link
+https://learn.microsoft.com/en-us/graph/api/aiinteractionhistory-getallenterpriseinteractions?view=graph-rest-beta&tabs=http
 
 ## Parameters
 
-### -Period
+### -UserId
 
-Specifies the priod of data to be included within the report. You must choose an option from the set.
+Specifies the user from which you want to get Copilot interactions.
 
 ```yaml
 Type: System.String
-ValidateSet: ("D7", "D30", "D90", "D180", "ALL")
 Required: True
-Default value: ALL
-```
-### -Format
-
-Specifies the format of the output. `object` will output the report to the PowerShell session, or `csv` will output the report to a file.
-
-```yaml
-Type: System.String
-ValidateSet: ("object", "csv")
-Required: False
-Default value: Object
-```
-
-### -Outpath
-
-Specifies the output file path for the CSV report. This parameter must be specified when `-Format` is set to `csv`
-
-```yaml
-Type: System.String
-Required: False
 Default value: None
+```
+### -Source
+
+Specifies the source appClass you which to filter the interactions by.
+
+```yaml
+Type: System.String
+ValidateSet: ("Word", "Excel", "Loop", "M365App", "Bing", "Forms", "OneNote", 
+                    "Outlook", "PowerPoint", "TeamsAiNotes", "Channel", "Chat", 
+                    "Meeting", "WebChat", "Whiteboard")
+Required: False
+Default value: All
+```
+
+### -StartDate
+
+Specifies the start date for which you want to filter the interactions by.
+
+```yaml
+Type: System.String
+Required: False
+ValidatePattern: ("^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
+Default value: All
+```
+
+### -EndDate
+
+Specifies the end date for which you want to filter the interactions by.
+
+```yaml
+Type: System.String
+Required: False
+ValidatePattern: ("^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
+Default value: All
 ```

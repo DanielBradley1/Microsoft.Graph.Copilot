@@ -23,3 +23,5 @@ Get-CopilotPersonalizationSetting
 --------------                                                                                     ----------------------- ----------------
 https://graph.microsoft.com/beta/$metadata#copilot/settings/people/enhancedPersonalization/$entity                    True ce86fe93-d42b-4e25-9f8b-55c108267f99
 ```
+## Graph API reference link
+https://learn.microsoft.com/en-us/graph/api/enhancedpersonalizationsetting-get?view=graph-rest-beta

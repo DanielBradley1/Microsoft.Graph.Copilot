@@ -44,6 +44,9 @@ Get-CopilotUsageDetail -Period All -Format csv -Outpath C:\reports\CopilotUsageR
 Copilot usage details saved to: C:\reports\CopilotUsageReport.csv
 ```
 
+## Graph API reference link
+https://learn.microsoft.com/en-us/graph/api/reportroot-getmicrosoft365copilotusageuserdetail
+
 ## Parameters
 
 ### -Period

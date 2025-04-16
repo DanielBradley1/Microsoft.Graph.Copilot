@@ -5,7 +5,7 @@
     Author = 'Daniel Bradley'
     CompanyName = 'ourcloudnetwork.com'
     Copyright = '(c) ourcloudnetwork. All rights reserved.'
-    Description = 'A PowerShell module to to managed Microsoft Copilot related settings with the Graph API.'
+    Description = 'A PowerShell module to manage Microsoft Copilot related settings with the Graph API. This module is in early development and is only compatible with the available Microsoft Graph Beta APIs. It is not developed or supported by Microsoft.'
     FunctionsToExport = @(
         'Get-CopilotInteractionHistory',
         'Get-CopilotLicense',

@@ -5,7 +5,6 @@ function Update-CopilotPersonalizationSetting {
     
     .DESCRIPTION
     Updates the Microsoft 365 Copilot personalization settings for the tenant. 
-    This cmdlet requires the Graph API permission PeopleSettings.ReadWrite.All.
     
     .EXAMPLE
     Update-PersonalizationSetting -isEnabled $true -DisabledForGroups "ce86fe93-d42b-4e25-9f8b-55c108267f99"
