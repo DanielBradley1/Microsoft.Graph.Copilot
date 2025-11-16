@@ -1,6 +1,6 @@
 @{
     RootModule = 'Microsoft.Graph.Copilot.psm1'
-    ModuleVersion = '0.0.1'
+    ModuleVersion = '0.1.0'
     GUID = 'eca6392f-3bc5-4031-b054-77f57b6c8758'
     Author = 'Daniel Bradley'
     CompanyName = 'ourcloudnetwork.com'
@@ -13,7 +13,9 @@
         'Get-CopilotUsageDetail',
         'Get-CopilotPersonalizationSetting',
         'Update-CopilotLimitedMode',
-        'Update-CopilotPersonalizationSetting'
+        'Update-CopilotPersonalizationSetting',
+        'New-CopilotSearch',
+        'New-CopilotRetrieval'
     )
     CmdletsToExport = @()
     VariablesToExport = @()
